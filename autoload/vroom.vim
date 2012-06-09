@@ -52,14 +52,26 @@ endif
 " Main functions {{{
 
 " Public: Run current test file, or last test run
-function vroom#RunTestFile()
-  call s:RunTestFile({})
+function vroom#RunTestFile(...)
+  if a:0
+    let opts = a:1
+  else
+    let opts = {}
+  endif
+
+  call s:RunTestFile(opts)
 endfunction
 
 " Public: Run the nearest test in the current test file
 " Assumes your test framework supports filename:line# format
-function vroom#RunNearestTest()
-  call s:RunNearestTest({})
+function vroom#RunNearestTest(...)
+  if a:0
+    let opts = a:1
+  else
+    let opts = {}
+  endif
+
+  call s:RunNearestTest(opts)
 endfunction
 
 " Public: Run current test file, or last test run with custom options.
