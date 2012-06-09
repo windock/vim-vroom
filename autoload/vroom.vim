@@ -116,11 +116,11 @@ endfunction
 "            'opts': any additional options (e.g., '--drb')
 "            'line_number': the line number of the test to run (e.g., ':4')
 function s:RunTests(filename, args)
+  call s:PrepareToRunTests()
+
   let runner        = get(a:args, 'runner', s:DetermineRunner(a:filename))
   let opts          = get(a:args, 'options', ''                          )
   let line_number   = get(a:args, 'line',    ''                          )
-
-  call s:PrepareToRunTests()
 
   call s:Run(runner . ' ' . opts . ' ' . a:filename . line_number)
 endfunction
