@@ -55,7 +55,7 @@ endif
 "
 " args     - options for running the tests:
 "            'runner': the test runner to use (e.g., 'm')
-"            'opts': any additional options (e.g., '--drb')
+"            'options': any additional options (e.g., '--drb')
 function vroom#RunTestFile(...)
   if a:0
     let opts = a:1
@@ -71,7 +71,7 @@ endfunction
 "
 " args     - options for running the tests:
 "            'runner': the test runner to use (e.g., 'm')
-"            'opts': any additional options (e.g., '--drb')
+"            'options': any additional options (e.g., '--drb')
 function vroom#RunNearestTest(...)
   if a:0
     let opts = a:1
@@ -86,7 +86,7 @@ endfunction
 "
 " args     - options for running the tests:
 "            'runner': the test runner to use (e.g., 'm')
-"            'opts': any additional options (e.g., '--drb')
+"            'options': any additional options (e.g., '--drb')
 function vroom#RunTestFileCustom(args)
   call s:RunTestFile(a:args)
 endfunction
@@ -96,7 +96,7 @@ endfunction
 "
 " args     - options for running the tests:
 "            'runner': the test runner to use (e.g., 'm')
-"            'opts': any additional options (e.g., '--drb')
+"            'options': any additional options (e.g., '--drb')
 function vroom#RunNearestTestCustom(args)
   call s:RunNearestTest(a:args)
 endfunction
@@ -133,7 +133,7 @@ endfunction
 " filename - a filename.
 " args     - options for running the tests:
 "            'runner': the test runner to use (e.g., 'm')
-"            'opts': any additional options (e.g., '--drb')
+"            'options': any additional options (e.g., '--drb')
 "            'line_number': the line number of the test to run (e.g., ':4')
 function s:RunTests(filename, args)
   call s:PrepareToRunTests()
