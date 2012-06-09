@@ -52,6 +52,10 @@ endif
 " Main functions {{{
 
 " Public: Run current test file, or last test run
+"
+" args     - options for running the tests:
+"            'runner': the test runner to use (e.g., 'm')
+"            'opts': any additional options (e.g., '--drb')
 function vroom#RunTestFile(...)
   if a:0
     let opts = a:1
@@ -64,6 +68,10 @@ endfunction
 
 " Public: Run the nearest test in the current test file
 " Assumes your test framework supports filename:line# format
+"
+" args     - options for running the tests:
+"            'runner': the test runner to use (e.g., 'm')
+"            'opts': any additional options (e.g., '--drb')
 function vroom#RunNearestTest(...)
   if a:0
     let opts = a:1
