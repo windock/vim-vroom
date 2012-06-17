@@ -61,6 +61,11 @@ endfunction
 function vroom#RunNearestTest()
   call s:RunNearestTest()
 endfunction
+"
+" Public: Run all the tests
+function vroom#RunAllTests()
+  call s:RunTests('')
+endfunction
 
 " Internal: Runs the current file as a test. Also saves the current file, so
 " next time the function is called in a non-test file, it runs the last test
@@ -108,6 +113,8 @@ function s:RunTests(filename)
     call s:Run(s:test_runner_prefix .g:vroom_cucumber_path . a:filename . s:color_flag)
   elseif match(a:filename, "_test.rb") != -1
     call s:Run(s:test_runner_prefix ."ruby -Itest " . a:filename)
+  else
+    call s:Run(s:test_runner_prefix .g:vroom_spec_command . a:filename . s:color_flag)
   end
 endfunction
 
